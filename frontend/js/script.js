@@ -11,7 +11,7 @@ let inputSearch = document.getElementById("inputField");
 let searchBtn = document.getElementById("searchBtn");
 let searchList = document.querySelector(".search-list");
 let dateTime = document.getElementById("dateTime");
-const baseUrl = "http://localhost:5000/api/v1/";
+const baseUrl = "https://weather-app-api-topaz.vercel.app/api/v1/";
 let interval;
 let timeoutId;
 getWeather("cairo");
