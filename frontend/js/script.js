@@ -62,7 +62,7 @@ async function search(kw) {
   try {
     searchBtn.innerHTML = '<span class="loader"></span>';
     const result = await axios.get(
-      `http://localhost:5000/api/v1/search?q=${kw}`
+      `${baseUrl}search?q=${kw}`
     );
     return result.data.data;
   } finally {
@@ -89,7 +89,7 @@ async function getWeather(city) {
     searchBtn.innerHTML = '<i class="fa fa-search"></i>';
     mainTemp.innerHTML = `--°`;
     feelLike.innerHTML = `--°`;
-    cityName.innerHTML = error.response.data.message + "!";
+    cityName.innerHTML = error.response.data.message + "!" || "city not found";
     weather.innerHTML = "----";
     cloudy.innerHTML = "--%";
     humidity.innerHTML = "--%";
